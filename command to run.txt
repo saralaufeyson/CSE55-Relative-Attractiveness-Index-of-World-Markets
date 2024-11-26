@@ -1,0 +1,1 @@
+python -m streamlit run "c:/Users/LAYASREE/Downloads/capstone project/capstone/app.py"

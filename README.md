@@ -1,5 +1,5 @@
 # Pharmascope
-
+![Pharmascope Logo](documents/Frame%204.png)
 ## Overview
 Pharmascope is a web application built with Streamlit that helps pharmaceutical companies identify ideal locations for their business operations. The application calculates a Relative Attractiveness Index (RAI) using World Bank data to evaluate different countries based on multiple economic and healthcare indicators.
 

@@ -1,1 +1,1 @@
-python -m streamlit run "c:/Users/LAYASREE/Downloads/capstone project/capstone/code implementation/test10.py"
+python -m streamlit run "c:/Users/LAYASREE/Downloads/capstone project/capstone/CSE55-Relative-Attractiveness-Index-of-World-Markets/code implementation/test10.py"

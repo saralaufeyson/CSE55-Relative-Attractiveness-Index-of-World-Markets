@@ -100,7 +100,7 @@ def calculate_rai():
     gdp_weight = st.sidebar.slider("GDP Weight", 0, 100, 40)
     healthcare_weight = st.sidebar.slider("Healthcare Weight", 0, 100, 30)
     labor_weight = st.sidebar.slider("Labor Force Weight", 0, 100, 30)
-    if st.button("run"):
+    if st.button("Run"):
         weights = [gdp_weight, healthcare_weight, labor_weight]
         normalized_weights = [w / sum(weights) for w in weights]
 
@@ -168,7 +168,7 @@ def calculate_rai():
 
 # Main function to control navigation
 def main():
-    st.set_page_config(page_title="Pharmascope", page_icon="⚕️", layout="wide")
+    st.set_page_config(page_title="Pharmascope", page_icon="🩺", layout="wide")
     st.sidebar.title("Navigation")
     menu = ["Home", "Predictions"]
     choice = st.sidebar.radio("Go to", menu)

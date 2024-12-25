@@ -7,7 +7,7 @@ from datetime import datetime
 import pandas as pd
 from geopy.geocoders import Nominatim
 
-# Function to render the custom homepage with HTML content
+
 def render_homepage():
     homepage_html = """
     <!DOCTYPE html>

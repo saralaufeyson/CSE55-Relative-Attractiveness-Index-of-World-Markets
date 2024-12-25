@@ -1,0 +1,65 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#ffffff"/>
+    
+    <!-- Pipeline Stages -->
+    <!-- Data Collection -->
+    <rect x="50" y="50" width="150" height="300" rx="10" fill="#f3e5f5" fill-opacity="0.3" stroke="#9c27b0" stroke-width="2"/>
+    <text x="125" y="80" text-anchor="middle" font-size="16" fill="#6a1b9a">Data Collection</text>
+    <rect x="70" y="100" width="110" height="40" rx="5" fill="#e1bee7"/>
+    <text x="125" y="125" text-anchor="middle" font-size="12">World Bank API</text>
+    <rect x="70" y="150" width="110" height="40" rx="5" fill="#e1bee7"/>
+    <text x="125" y="175" text-anchor="middle" font-size="12">GDP Data</text>
+    <rect x="70" y="200" width="110" height="40" rx="5" fill="#e1bee7"/>
+    <text x="125" y="225" text-anchor="middle" font-size="12">Healthcare Data</text>
+    <rect x="70" y="250" width="110" height="40" rx="5" fill="#e1bee7"/>
+    <text x="125" y="275" text-anchor="middle" font-size="12">Labor Force Data</text>
+    
+    <!-- Data Preprocessing -->
+    <rect x="250" y="50" width="150" height="300" rx="10" fill="#e8f5e9" fill-opacity="0.3" stroke="#4caf50" stroke-width="2"/>
+    <text x="325" y="80" text-anchor="middle" font-size="16" fill="#2e7d32">Preprocessing</text>
+    <rect x="270" y="100" width="110" height="40" rx="5" fill="#c8e6c9"/>
+    <text x="325" y="125" text-anchor="middle" font-size="12">Data Cleaning</text>
+    <rect x="270" y="150" width="110" height="40" rx="5" fill="#c8e6c9"/>
+    <text x="325" y="175" text-anchor="middle" font-size="12">Handle Missing</text>
+    <rect x="270" y="200" width="110" height="40" rx="5" fill="#c8e6c9"/>
+    <text x="325" y="225" text-anchor="middle" font-size="12">Normalization</text>
+    <rect x="270" y="250" width="110" height="40" rx="5" fill="#c8e6c9"/>
+    <text x="325" y="275" text-anchor="middle" font-size="12">Data Validation</text>
+    
+    <!-- RAI Calculation -->
+    <rect x="450" y="50" width="150" height="300" rx="10" fill="#fff3e0" fill-opacity="0.3" stroke="#ff9800" stroke-width="2"/>
+    <text x="525" y="80" text-anchor="middle" font-size="16" fill="#ef6c00">RAI Calculation</text>
+    <rect x="470" y="100" width="110" height="40" rx="5" fill="#ffe0b2"/>
+    <text x="525" y="125" text-anchor="middle" font-size="12">Weight Application</text>
+    <rect x="470" y="150" width="110" height="40" rx="5" fill="#ffe0b2"/>
+    <text x="525" y="175" text-anchor="middle" font-size="12">Score Generation</text>
+    <rect x="470" y="200" width="110" height="40" rx="5" fill="#ffe0b2"/>
+    <text x="525" y="225" text-anchor="middle" font-size="12">Ranking</text>
+    <rect x="470" y="250" width="110" height="40" rx="5" fill="#ffe0b2"/>
+    <text x="525" y="275" text-anchor="middle" font-size="12">Validation</text>
+    
+    <!-- Output Generation -->
+    <rect x="650" y="50" width="150" height="300" rx="10" fill="#e3f2fd" fill-opacity="0.3" stroke="#1976d2" stroke-width="2"/>
+    <text x="725" y="80" text-anchor="middle" font-size="16" fill="#1565c0">Output</text>
+    <rect x="670" y="100" width="110" height="40" rx="5" fill="#bbdefb"/>
+    <text x="725" y="125" text-anchor="middle" font-size="12">Data Tables</text>
+    <rect x="670" y="150" width="110" height="40" rx="5" fill="#bbdefb"/>
+    <text x="725" y="175" text-anchor="middle" font-size="12">Charts</text>
+    <rect x="670" y="200" width="110" height="40" rx="5" fill="#bbdefb"/>
+    <text x="725" y="225" text-anchor="middle" font-size="12">Maps</text>
+    <rect x="670" y="250" width="110" height="40" rx="5" fill="#bbdefb"/>
+    <text x="725" y="275" text-anchor="middle" font-size="12">Reports</text>
+    
+    <!-- Flow Arrows -->
+    <path d="M 200 200 L 250 200" stroke="#666" stroke-width="2" marker-end="url(#arrowhead2)"/>
+    <path d="M 400 200 L 450 200" stroke="#666" stroke-width="2" marker-end="url(#arrowhead2)"/>
+    <path d="M 600 200 L 650 200" stroke="#666" stroke-width="2" marker-end="url(#arrowhead2)"/>
+    
+    <!-- Arrow Definitions -->
+    <defs>
+        <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+        </marker>
+    </defs>
+</svg>

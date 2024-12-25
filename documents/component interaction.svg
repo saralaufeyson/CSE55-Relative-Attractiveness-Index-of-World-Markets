@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#ffffff"/>
+    
+    <!-- User Component -->
+    <rect x="350" y="30" width="120" height="60" rx="10" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="410" y="65" text-anchor="middle" font-size="16">User</text>
+    
+    <!-- Streamlit Interface -->
+    <rect x="350" y="150" width="120" height="60" rx="10" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2"/>
+    <text x="410" y="185" text-anchor="middle" font-size="14">Streamlit Interface</text>
+    
+    <!-- World Bank API -->
+    <rect x="100" y="270" width="120" height="60" rx="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="160" y="305" text-anchor="middle" font-size="14">World Bank API</text>
+    
+    <!-- Data Processor -->
+    <rect x="350" y="270" width="120" height="60" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="410" y="305" text-anchor="middle" font-size="14">Data Processor</text>
+    
+    <!-- Geocoding Service -->
+    <rect x="600" y="270" width="120" height="60" rx="10" fill="#fce4ec" stroke="#e91e63" stroke-width="2"/>
+    <text x="660" y="305" text-anchor="middle" font-size="14">Geocoding Service</text>
+    
+    <!-- RAI Calculator -->
+    <rect x="350" y="390" width="120" height="60" rx="10" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+    <text x="410" y="425" text-anchor="middle" font-size="14">RAI Calculator</text>
+    
+    <!-- Visualization Engine -->
+    <rect x="350" y="510" width="120" height="60" rx="10" fill="#e0f7fa" stroke="#00bcd4" stroke-width="2"/>
+    <text x="410" y="545" text-anchor="middle" font-size="14">Visualization Engine</text>
+    
+    <!-- Arrows -->
+    <!-- User <-> Interface -->
+    <path d="M 410 90 L 410 150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 430 150 L 430 90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Interface <-> Data Processor -->
+    <path d="M 410 210 L 410 270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 430 270 L 430 210" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- World Bank -> Data Processor -->
+    <path d="M 220 300 L 350 300" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Data Processor -> Geocoding -->
+    <path d="M 470 300 L 600 300" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Data Processor <-> RAI Calculator -->
+    <path d="M 410 330 L 410 390" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 430 390 L 430 330" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- RAI Calculator <-> Visualization -->
+    <path d="M 410 450 L 410 510" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 430 510 L 430 450" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Arrow Definitions -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+        </marker>
+    </defs>
+    
+    <!-- Interaction Labels -->
+    <text x="440" y="120" font-size="10">User Input</text>
+    <text x="360" y="120" font-size="10">Display Results</text>
+    <text x="270" y="290" font-size="10">Economic Data</text>
+    <text x="510" y="290" font-size="10">Location Data</text>
+    <text x="440" y="360" font-size="10">Raw Data</text>
+    <text x="360" y="360" font-size="10">Processed Data</text>
+    <text x="440" y="480" font-size="10">RAI Scores</text>
+    <text x="360" y="480" font-size="10">Visualization Request</text>
+</svg>

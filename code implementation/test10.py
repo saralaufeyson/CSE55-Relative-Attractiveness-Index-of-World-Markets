@@ -18,41 +18,152 @@ def render_homepage():
         <title>Pharmascope</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Montaga', serif;
+            }
+            body {
+                background-color: #000;
+                color: #fff;
+                line-height: 1.6;
+                padding: 20px;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            h1, h2 {
+                font-weight: 600;
+                background: linear-gradient(180deg, #7F1EEB, #00FFD9);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header img {
+                width: 300px;
+                margin-bottom: 20px;
+            }
+            .about-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-between;
+            }
+            .section {
+                flex: 1;
+                min-width: 300px;
+                padding: 20px;
+                border: 2px solid transparent;
+                border-radius: 20px;
+                background: linear-gradient(#000, #000) padding-box,
+                            linear-gradient(90deg, #7F1EEB, #00FFD9) border-box;
+            }
+            footer {
+                text-align: center;
+                margin-top: 40px;
+                padding: 20px;
+                background: #111;
+            }
+            footer a {
+                color: #7F1EEB;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+            footer a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <img src="https://i.ibb.co/9GP6hyP/Frame-4.png" alt="Logo">
+                <h1>Map the Future of Pharma</h1>
+                <p>Discover the perfect place to bring innovation to life.</p>
+            </div>
+            <div class="about-container">
+                <div class="section">
+                    <h2>About Us</h2>
+                    <p>We're making pharmaceutical analytics practical—because medicines <a href="#">save lives</a>.</p>
+                </div>
+                <div class="section">
+                    <h2>What We Offer</h2>
+                    <p>Discover <a href="#">ideal locations</a> for your business with our customizable solutions.</p>
+                </div>
+            </div>
+            <footer>
+                &copy; 2024 Pharmascope | <a href="#">Home</a> | <a href="#">About Us</a> | <a href="#">Our Services</a>
+            </footer>
+        </div>
+    </body>
+    </html>
+    """
+    st.markdown(homepage_html, unsafe_allow_html=True)
+
+
+
+# Pharmascope color: Modify as per your color requirements
+pharmascope_color = "#7F1EEB"  # Example color, adjust as needed
+
+def render_predictions():
+    predictions_html = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
             * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montaga', serif; }
             body { background-color: #000; color: #fff; line-height: 1.6; }
             h1, h2 { text-align: left; font-weight: 600; background: linear-gradient(180deg, #7F1EEB, #00FFD9);
                      -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding: 20px; }
             .header { text-align: center; padding: 40px; }
             .header img { width: 480px; }
-            .about-container { display: flex; justify-content: space-around; padding: 40px; }
-            .section { width: 45%; padding: 20px; border: 2px solid transparent; border-radius: 20px;
-                       background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #7F1EEB, #00FFD9) border-box; }
+            .content-container { padding: 40px; }
+            .content-section { 
+                padding: 20px; 
+                border: 2px solid transparent; 
+                border-radius: 20px;
+                background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #7F1EEB, #00FFD9) border-box; 
+                margin-bottom: 20px;
+            }
             footer { text-align: center; margin-top: 40px; padding: 20px; background: #111; }
+
+            /* Custom CSS for Run button */
+            .run-button {
+                background-color: #7F1EEB; /* Pharmascope color */
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .run-button:hover {
+                background-color: #00FFD9; /* Adjust for hover effect */
+            }
         </style>
     </head>
     <body>
-        <div class="header">
-            <img src="https://i.ibb.co/9GP6hyP/Frame-4.png" alt="Logo">
-            <h1>Map the Future of Pharma</h1>
-            <p>Discover the perfect place to bring innovation to life.</p>
-        </div>
-        <div class="about-container">
-            <div class="section">
-                <h2>About Us</h2>
-                <p>We're making pharmaceutical analytics practical—because medicines <a href="#">save lives</a>.</p>
-            </div>
-            <div class="section">
-                <h2>What We Offer</h2>
-                <p>Discover <a href="#">ideal locations</a> for your business with our customizable solutions.</p>
-            </div>
-        </div>
-        <footer>
-            &copy; 2024 Pharmascope | <a href="#">Home</a> | <a href="#">About Us</a> | <a href="#">Our Services</a>
-        </footer>
+    
+        
     </body>
     </html>
     """
-    st.markdown(homepage_html, unsafe_allow_html=True)
+    
+    # Injecting the CSS into the Streamlit app
+    st.markdown(predictions_html, unsafe_allow_html=True)
+
+
 
 # Function to calculate RAI
 def calculate_rai():
@@ -116,28 +227,22 @@ def calculate_rai():
             normalized_data['Labor Force'] * normalized_weights[2]
         )
         data['RAI'] = normalized_data['RAI']
-        st.write("RAI Calculation Complete:")
-        st.write("*the data which is not available is marked as zero")
+       # st.write("RAI Calculation Complete:")
+        #st.write("*the data which is not available is marked as zero")
    # adata=data.groupby('Country', as_index=False).mean()
-        st.dataframe(data.sort_values('RAI',ascending=False))
+        #st.dataframe(data.sort_values('RAI',ascending=False))
 
         st.write("aggregated data")
         numeric_columns = ['GDP', 'Healthcare Expenditure', 'Labor Force','RAI']
         aggregated_data = data.groupby('Country', as_index=False)[numeric_columns].mean()
         st.dataframe(aggregated_data)
 
-    # Visualization
-        st.subheader("Top Countries by RAI")
-        fig = px.bar(data.sort_values('RAI', ascending=False), x='Country', y='RAI', title="Relative Attractiveness Index")
-        st.plotly_chart(fig)
-
-        st.subheader("Top Countries by RAI2")
         fig = px.bar(aggregated_data.sort_values('RAI', ascending=False), x='Country', y='RAI', title="Relative Attractiveness Index")
         st.plotly_chart(fig)
     # Assuming `data` is your DataFrame and RAI is already calculated
         top_12 = aggregated_data.sort_values('RAI', ascending=False).head(12)
         mapping=top_12['Country'].tolist()
-        st.write(mapping)
+    
 
         st.write("Top 12 Countries with Highest RAI")
         st.dataframe(top_12)
@@ -176,9 +281,10 @@ def main():
     if choice == "Home":
         render_homepage()
     elif choice == "Predictions":
-        calculate_rai()
+        render_predictions()
+        calculate_rai()  # Keep calculations and interactivity below the styled HTML
+
 
 
 if __name__ == "__main__":
     main()
-

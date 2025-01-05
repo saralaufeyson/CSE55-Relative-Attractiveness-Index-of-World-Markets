@@ -1,2 +1,0 @@
-python -m streamlit run "c:/Users/LAYASREE/Downloads/capstone project/capstone/code implementation/test10.py"
-abc

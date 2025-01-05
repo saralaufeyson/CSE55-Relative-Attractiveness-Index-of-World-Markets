@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#ffffff"/>
+    
+    <!-- Title -->
+    <text x="400" y="40" text-anchor="middle" font-size="24" fill="#1976d2" font-weight="bold">RAI Calculation Workflow</text>
+    
+    <!-- Formula Box -->
+    <rect x="50" y="70" width="700" height="100" rx="10" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="400" y="100" text-anchor="middle" font-size="18" fill="#1976d2">RAI Formula</text>
+    <text x="400" y="140" text-anchor="middle" font-size="16">RAI = (w₁ × GDP_normalized) + (w₂ × Healthcare_normalized) + (w₃ × Labor_normalized)</text>
+    
+    <!-- Weight Constraints -->
+    <text x="400" y="160" text-anchor="middle" font-size="14">where w₁ + w₂ + w₃ = 100% and each w ≥ 0</text>
+    
+    <!-- Workflow Steps -->
+    <!-- Data Input -->
+    <rect x="100" y="200" width="200" height="100" rx="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="200" y="235" text-anchor="middle" font-size="16" fill="#e65100">Input Data</text>
+    <text x="200" y="255" text-anchor="middle" font-size="12">• Raw GDP Values</text>
+    <text x="200" y="270" text-anchor="middle" font-size="12">• Healthcare Expenditure</text>
+    <text x="200" y="285" text-anchor="middle" font-size="12">• Labor Force Data</text>
+    
+    <!-- Normalization -->
+    <rect x="500" y="200" width="200" height="80" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="600" y="235" text-anchor="middle" font-size="16" fill="#2e7d32">Normalization</text>
+    <text x="600" y="255" text-anchor="middle" font-size="12">X_norm = (X - X_min)</text>
+    <text x="600" y="270" text-anchor="middle" font-size="12">(X_max - X_min)</text>
+    
+    <!-- Weight Assignment -->
+    <rect x="100" y="320" width="200" height="100" rx="10" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+    <text x="200" y="355" text-anchor="middle" font-size="16" fill="#6a1b9a">Weight Assignment</text>
+    <text x="200" y="375" text-anchor="middle" font-size="12">• GDP: w₁ (default 40%)</text>
+    <text x="200" y="390" text-anchor="middle" font-size="12">• Healthcare: w₂ (default 30%)</text>
+    <text x="200" y="405" text-anchor="middle" font-size="12">• Labor: w₃ (default 30%)</text>
+    
+    <!-- RAI Computation -->
+    <rect x="500" y="320" width="200" height="100" rx="10" fill="#e0f7fa" stroke="#00bcd4" stroke-width="2"/>
+    <text x="600" y="355" text-anchor="middle" font-size="16" fill="#006064">RAI Computation</text>
+    <text x="600" y="375" text-anchor="middle" font-size="12">• Apply Weights</text>
+    <text x="600" y="390" text-anchor="middle" font-size="12">• Sum Components</text>
+    <text x="600" y="405" text-anchor="middle" font-size="12">• Scale to 0-100</text>
+    
+    <!-- Results -->
+    <rect x="300" y="440" width="200" height="80" rx="10" fill="#fce4ec" stroke="#e91e63" stroke-width="2"/>
+    <text x="400" y="475" text-anchor="middle" font-size="16" fill="#880e4f">Final RAI Score</text>
+    <text x="400" y="495" text-anchor="middle" font-size="12">• Country Rankings</text>
+    <text x="400" y="510" text-anchor="middle" font-size="12">• Comparative Analysis</text>
+    
+    <!-- Arrows -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+        </marker>
+    </defs>
+    
+    <!-- Connecting Arrows -->
+    <path d="M 300 240 L 500 240" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 600 280 L 600 320" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 300 360 L 500 360" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 500 400 L 400 440" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 300 400 L 400 440" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Process Labels -->
+    <text x="400" y="230" text-anchor="middle" font-size="12">Data Processing</text>
+    <text x="650" y="300" text-anchor="middle" font-size="12">Normalized Values</text>
+    <text x="400" y="350" text-anchor="middle" font-size="12">Weight Application</text>
+    <text x="350" y="420" text-anchor="left" font-size="12">Score Generation</text>
+    
+    <!-- Footer Notes -->
+    <text x="400" y="560" text-anchor="middle" font-size="14" fill="#666">Notes:</text>
+    <text x="400" y="580" text-anchor="middle" font-size="12" fill="#666">• All indicators are normalized to 0-1 scale before weight application</text>
+    <text x="400" y="595" text-anchor="middle" font-size="12" fill="#666">• Final RAI scores are scaled to 0-100 for easier interpretation</text>
+</svg>

@@ -152,6 +152,7 @@ def render_predictions():
             .run-button:hover {
                 background-color: #00FFD9; /* Adjust for hover effect */
             }
+            
         </style>
     </head>
     <body>
@@ -206,12 +207,13 @@ def calculate_rai():
     data.reset_index(inplace=True)
     data.columns = ['Country', 'Year', 'GDP', 'Healthcare Expenditure', 'Labor Force']
     data.fillna(0, inplace=True)
+    st.write("Lets find out which country is best for Pharma Industry...use the slider to give your weights(how important you want the factor to be considered for your industry)and click on run")
 
     # Weights for calculation
-    st.sidebar.header("Adjust Weights")
-    gdp_weight = st.sidebar.slider("GDP Weight", 0, 100, 40)
-    healthcare_weight = st.sidebar.slider("Healthcare Weight", 0, 100, 30)
-    labor_weight = st.sidebar.slider("Labor Force Weight", 0, 100, 30)
+    st.header("Adjust Weights")
+    gdp_weight = st.slider("GDP Weight", 0, 100, 40)
+    healthcare_weight = st.slider("Healthcare Weight", 0, 100, 30)
+    labor_weight = st.slider("Labor Force Weight", 0, 100, 30)
     if st.button("Run"):
         weights = [gdp_weight, healthcare_weight, labor_weight]
         normalized_weights = [w / sum(weights) for w in weights]
@@ -233,10 +235,10 @@ def calculate_rai():
    # adata=data.groupby('Country', as_index=False).mean()
         #st.dataframe(data.sort_values('RAI',ascending=False))
 
-        st.write("aggregated data")
+        #st.write("aggregated data")
         numeric_columns = ['GDP', 'Healthcare Expenditure', 'Labor Force','RAI']
         aggregated_data = data.groupby('Country', as_index=False)[numeric_columns].mean()
-        st.dataframe(aggregated_data)
+       # st.dataframe(aggregated_data)
 
         fig = px.bar(aggregated_data.sort_values('RAI', ascending=False), x='Country', y='RAI', title="Relative Attractiveness Index")
         st.plotly_chart(fig)
@@ -269,6 +271,8 @@ def calculate_rai():
         coordinates_df.rename(columns={'Latitude': 'lat', 'Longitude': 'lon'}, inplace=True)
         st.map(coordinates_df)
         st.write(coordinates_df)
+        st.write("Data of all countries")
+        st.dataframe(aggregated_data)
     
 
 
@@ -276,10 +280,12 @@ def calculate_rai():
 def main():
     st.session_state.theme = "dark"
     st.set_page_config(page_title="Pharmascope", page_icon="🩺", layout="wide" )
+    
 
-    st.sidebar.title("Navigation")
+    #st.sidebar.title("Navigation")
     menu = ["Home", "Predictions"]
-    choice = st.sidebar.radio("Go to", menu)
+    #menu = ["Home", "Predictions"]
+    choice = st.radio("Go to:", menu, index=0)
 
     if choice == "Home":
         render_homepage()

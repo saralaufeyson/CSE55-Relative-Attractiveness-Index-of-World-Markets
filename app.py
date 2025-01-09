@@ -281,15 +281,26 @@ def main():
     st.session_state.theme = "dark"
     st.set_page_config(page_title="Pharmascope", page_icon="🩺", layout="wide" )
     
+    
 
-    #st.sidebar.title("Navigation")
-    menu = ["Home", "Predictions"]
-    #menu = ["Home", "Predictions"]
-    choice = st.radio("Go to:", menu, index=0)
+    option_map = {
+        0: "Home",
+        1: "Predictions",
+    }
 
-    if choice == "Home":
+# Create pills for navigation
+    selection = st.pills(
+     "Navigation",
+        options=option_map.keys(),
+     format_func=lambda option: option_map[option],
+     selection_mode="single",
+    )
+    render_homepage()
+
+
+    if selection == 0: 
         render_homepage()
-    elif choice == "Predictions":
+    elif selection == 1:
         render_predictions()
         calculate_rai()  # Keep calculations and interactivity below the styled HTML
 

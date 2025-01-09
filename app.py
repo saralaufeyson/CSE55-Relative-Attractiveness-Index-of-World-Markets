@@ -207,14 +207,14 @@ def calculate_rai():
     data.reset_index(inplace=True)
     data.columns = ['Country', 'Year', 'GDP', 'Healthcare Expenditure', 'Labor Force']
     data.fillna(0, inplace=True)
-    st.write("Lets find out which country is best for Pharma Industry...use the slider to give your weights(how important you want the factor to be considered for your industry)and click on run")
+    st.write("Lets find out which country is best for Pharma Industry...Go to the navbar,use the slider to give your weights(how important you want the factor to be considered for your industry)and click on run")
 
     # Weights for calculation
-    st.header("Adjust Weights")
-    gdp_weight = st.slider("GDP Weight", 0, 100, 40)
-    healthcare_weight = st.slider("Healthcare Weight", 0, 100, 30)
-    labor_weight = st.slider("Labor Force Weight", 0, 100, 30)
-    if st.button("Run"):
+    st.sidebar.header("Adjust Weights")
+    gdp_weight = st.sidebar.slider("GDP Weight", 0, 100, 40)
+    healthcare_weight = st.sidebar.slider("Healthcare Weight", 0, 100, 30)
+    labor_weight = st.sidebar.slider("Labor Force Weight", 0, 100, 30)
+    if st.sidebar.button("Run"):
         weights = [gdp_weight, healthcare_weight, labor_weight]
         normalized_weights = [w / sum(weights) for w in weights]
 

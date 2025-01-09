@@ -42,7 +42,7 @@ pip install streamlit wbdata pandas plotly scikit-learn geopy
 3. Run the application:
 
 ``` bash
-streamlit run test10.py
+streamlit run app.py
 ```
 
 ## Usage

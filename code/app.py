@@ -23,6 +23,7 @@ def render_homepage():
                 padding: 0;
                 box-sizing: border-box;
                 font-family: 'Montaga', serif;
+                
             }
             body {
                 background-color: #000;
@@ -273,6 +274,7 @@ def calculate_rai():
 
 # Main function to control navigation
 def main():
+    st.session_state.theme = "dark"
     st.set_page_config(page_title="Pharmascope", page_icon="🩺", layout="wide" )
 
     st.sidebar.title("Navigation")

@@ -266,7 +266,7 @@ def calculate_rai():
             latitude, longitude = get_coordinates(country)
             coordinates_data.append([country, latitude, longitude])
             coordinates_df = pd.DataFrame(coordinates_data, columns=['Country', 'Latitude', 'Longitude'])
-        print(coordinates_df)
+        #print(coordinates_df)
         
         coordinates_df.rename(columns={'Latitude': 'lat', 'Longitude': 'lon'}, inplace=True)
         st.map(coordinates_df)

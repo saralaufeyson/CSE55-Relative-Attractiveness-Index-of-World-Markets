@@ -1,2 +1,8 @@
+# .streamlit/config.toml
 [theme]
-base="dark"
+base = "dark"
+primaryColor = "#1E90FF"  # Example: Dodger Blue
+backgroundColor = "#121212"  # Example: Dark Gray
+secondaryBackgroundColor = "#1F1F1F"  # Sidebar and widget background
+textColor = "#E1E1E1"  # Light gray for text
+font = "sans serif"

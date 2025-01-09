@@ -197,7 +197,7 @@ def calculate_rai():
         'SL.TLF.TOTL.IN': 'Labor Force'
     }
 
-    st.write("Fetching data from World Bank...")
+    #st.write("Fetching data from World Bank...")
     try:
         data = wbdata.get_dataframe(indicators, country=all_countries)
     except Exception as e:
@@ -280,7 +280,9 @@ def calculate_rai():
 def main():
     st.session_state.theme = "dark"
     st.set_page_config(page_title="Pharmascope", page_icon="🩺", layout="wide" )
-    
+    st.header("Welcome to PHARMASCOPE 🔎")
+    st.write(" Click on the tabs to navigate and unveil the future of pharma industry")
+              
     
 
     option_map = {
@@ -290,12 +292,12 @@ def main():
 
 # Create pills for navigation
     selection = st.pills(
-     "Navigation",
+     "Select page",
         options=option_map.keys(),
      format_func=lambda option: option_map[option],
      selection_mode="single",
     )
-    render_homepage()
+    
 
 
     if selection == 0: 

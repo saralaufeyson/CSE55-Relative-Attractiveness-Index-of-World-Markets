@@ -23,7 +23,6 @@ def render_homepage():
                 padding: 0;
                 box-sizing: border-box;
                 font-family: 'Montaga', serif;
-                
             }
             body {
                 background-color: #000;
@@ -44,7 +43,7 @@ def render_homepage():
                 margin-bottom: 20px;
             }
             .header {
-                text-align: center;
+                text-align: left;
                 margin-bottom: 40px;
             }
             .header img {
@@ -85,7 +84,6 @@ def render_homepage():
     <body>
         <div class="container">
             <div class="header">
-                <img src="https://i.ibb.co/9GP6hyP/Frame-4.png" alt="Logo">
                 <h1>Map the Future of Pharma</h1>
                 <p>Discover the perfect place to bring innovation to life.</p>
             </div>
@@ -207,9 +205,10 @@ def calculate_rai():
     data.reset_index(inplace=True)
     data.columns = ['Country', 'Year', 'GDP', 'Healthcare Expenditure', 'Labor Force']
     data.fillna(0, inplace=True)
-    st.write("Lets find out which country is best for Pharma Industry...Go to the navbar,use the slider to give your weights(how important you want the factor to be considered for your industry)and click on run")
+    st.write("Lets find out which country is best for Pharma Industry.Use the slider to give your weights(how important you want the factor to be considered for your industry)and click on run")
 
-    # Weights for calculation
+    if st.button("Adjust weights"):
+        st.write("Click on the navigation sidebar <")
     st.sidebar.header("Adjust Weights")
     gdp_weight = st.sidebar.slider("GDP Weight", 0, 100, 40)
     healthcare_weight = st.sidebar.slider("Healthcare Weight", 0, 100, 30)
@@ -218,7 +217,7 @@ def calculate_rai():
         weights = [gdp_weight, healthcare_weight, labor_weight]
         normalized_weights = [w / sum(weights) for w in weights]
 
-    # Normalize and calculate RAI
+        # Normalize and calculate RAI
         scaler = MinMaxScaler()
         normalized_data = pd.DataFrame(
             scaler.fit_transform(data[['GDP', 'Healthcare Expenditure', 'Labor Force']]),
@@ -280,31 +279,73 @@ def calculate_rai():
 def main():
     st.session_state.theme = "dark"
     st.set_page_config(page_title="Pharmascope", page_icon="🩺", layout="wide" )
-    st.header("Welcome to PHARMASCOPE 🔎")
-    st.write(" Click on the tabs to navigate and unveil the future of pharma industry")
-              
-    
+    # Custom CSS for layout and logo
+    st.markdown("""
+        <style>
+            /* Flex container for header */
+            .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: right;
+            padding: 10px 20px;
+            gap:50px;
+            
+        }
 
+        /* Logo styling */
+        .logo img {
+            height: 20px; /* Adjust height */
+            width: auto;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+# Header layout with columns
     option_map = {
-        0: "Home",
-        1: "Predictions",
-    }
-
-# Create pills for navigation
-    selection = st.pills(
-     "Select page",
-        options=option_map.keys(),
-     format_func=lambda option: option_map[option],
-     selection_mode="single",
-    )
     
+        "About": "About",
+        "Rai": "Predict",
+        }
+
+    with st.container():
+        col1, col2 = st.columns([1, 1])  # Adjust proportions as needed
+
+    # Left side: Pills
+        with col2:
+            st.markdown('<div class="header-container">', unsafe_allow_html=True)
+            selection = st.pills(
+            "",
+            options=option_map.keys(),
+            format_func=lambda option: option_map[option],
+            selection_mode="single",
+            )
+            st.markdown('</div>', unsafe_allow_html=True)
+
+    # Right side: Logo
+        with col1:
+            st.markdown('<div style="text-align: right;" class="logo">', unsafe_allow_html=True)
+            st.image("https://i.ibb.co/9GP6hyP/Frame-4.png")
+            st.markdown('</div>', unsafe_allow_html=True)
+
+# Initialize session state for selection
+    if "selection" not in st.session_state:
+        st.session_state.selection = "About"  # Default to Home (index 0)
 
 
-    if selection == 0: 
+
+# Update session state with the current selection
+    if selection is not None:
+        st.session_state.selection = selection
+
+# Conditional rendering based on the current pill selection
+    if st.session_state.selection == "About":  # Home
         render_homepage()
-    elif selection == 1:
+    elif st.session_state.selection == "Rai":  # Predictions
         render_predictions()
-        calculate_rai()  # Keep calculations and interactivity below the styled HTML
+        calculate_rai()
+
+              
+  
 
 
 

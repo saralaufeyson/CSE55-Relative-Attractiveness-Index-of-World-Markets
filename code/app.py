@@ -273,7 +273,8 @@ def calculate_rai():
 
 # Main function to control navigation
 def main():
-    st.set_page_config(page_title="Pharmascope", page_icon="🩺", layout="wide")
+    st.set_page_config(page_title="Pharmascope", page_icon="🩺", layout="wide" )
+
     st.sidebar.title("Navigation")
     menu = ["Home", "Predictions"]
     choice = st.sidebar.radio("Go to", menu)

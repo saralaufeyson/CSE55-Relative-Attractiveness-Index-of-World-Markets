@@ -314,7 +314,7 @@ def main():
         with col2:
             st.markdown('<div class="header-container">', unsafe_allow_html=True)
             selection = st.pills(
-                ":-D",
+                "‎ ",
             options=option_map.keys(),
             format_func=lambda option: option_map[option],
             selection_mode="single",
